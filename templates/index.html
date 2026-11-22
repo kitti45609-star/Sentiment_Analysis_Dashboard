@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div>
+            <h1>Sentiment Analysis Dashboard</h1>
+            <p>Understand customer opinions through product reviews</p>
+        </div>
+        <div class="header-icon">✦ AI Analytics</div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h2>Product Review Analysis</h2>
+            <p>Enter customer reviews below to discover their sentiment.</p>
+        </section>
+
+        <section class="input-section">
+            <h3>Enter Product Reviews</h3>
+            <textarea id="reviewsInput"
+                placeholder="Enter each product review on a new line..."></textarea>
+
+            <div class="input-footer">
+                <span>Maximum 50 reviews</span>
+                <button id="analyzeBtn" onclick="analyzeReviews()">
+                    Analyze Reviews →
+                </button>
+            </div>
+
+            <p id="errorMessage" class="error"></p>
+        </section>
+
+        <section class="results-section">
+            <h2>Analysis Overview</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card total">
+                    <span>Total Reviews</span>
+                    <h2 id="totalCount">0</h2>
+                </div>
+
+                <div class="stat-card positive">
+                    <span>Positive</span>
+                    <h2 id="positiveCount">0</h2>
+                </div>
+
+                <div class="stat-card negative">
+                    <span>Negative</span>
+                    <h2 id="negativeCount">0</h2>
+                </div>
+
+                <div class="stat-card neutral">
+                    <span>Neutral</span>
+                    <h2 id="neutralCount">0</h2>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <div class="chart-card">
+                    <h3>Sentiment Distribution</h3>
+                    <canvas id="sentimentChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Sentiment Summary</h3>
+                    <div id="summary">
+                        <p>Submit reviews to see the analysis summary.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <h2>Individual Review Results</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Review</th>
+                            <th>Sentiment</th>
+                            <th>Explanation</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="resultsTable">
+                        <tr>
+                            <td colspan="3" class="empty">
+                                No reviews analyzed yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Sentiment Analysis Dashboard | Product Review Analytics</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

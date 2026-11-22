@@ -1,0 +1,374 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f5f6fc;
+    color: #20213a;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(120deg, #191735, #4939a5, #7566df);
+    color: white;
+    padding: 38px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 30px rgba(52, 42, 130, 0.18);
+}
+
+.header h1 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #d8d4ff;
+    font-size: 14px;
+}
+
+.header-icon {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+/* Main layout */
+.container {
+    max-width: 1250px;
+    margin: 42px auto;
+    padding: 0 28px;
+}
+
+.welcome {
+    margin-bottom: 28px;
+}
+
+.welcome h2 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 9px;
+}
+
+.welcome p {
+    color: #85869b;
+    font-size: 14px;
+}
+
+/* Input area */
+.input-section,
+.chart-card,
+.review-section {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid #ececf5;
+    box-shadow: 0 8px 30px rgba(34, 32, 85, 0.045);
+}
+
+.input-section h3,
+.chart-card h3 {
+    font-size: 17px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+textarea {
+    width: 100%;
+    height: 160px;
+    padding: 18px;
+    border: 1px solid #e1e1ee;
+    border-radius: 12px;
+    resize: vertical;
+    font-size: 14px;
+    line-height: 1.7;
+    outline: none;
+    background: #fafaff;
+    color: #292943;
+    transition: 0.25s;
+}
+
+textarea:focus {
+    border-color: #7768df;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(119,104,223,0.1);
+}
+
+.input-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    gap: 15px;
+}
+
+.input-footer span {
+    color: #9293a6;
+    font-size: 13px;
+}
+
+button {
+    background: linear-gradient(120deg, #5748c5, #8171ed);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(92, 76, 201, 0.2);
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(92, 76, 201, 0.3);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.error {
+    color: #dc3545;
+    margin-top: 13px;
+    font-size: 13px;
+}
+
+/* Dashboard statistics */
+.results-section {
+    margin-top: 38px;
+}
+
+.results-section > h2,
+.review-section > h2 {
+    margin-bottom: 22px;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    padding: 25px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #ececf5;
+    box-shadow: 0 6px 22px rgba(34, 32, 85, 0.04);
+    transition: 0.25s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(34, 32, 85, 0.09);
+}
+
+.stat-card span {
+    color: #85869b;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stat-card h2 {
+    font-size: 34px;
+    margin-top: 14px;
+    font-weight: 800;
+}
+
+.total {
+    border-bottom: 4px solid #7566df;
+}
+
+.positive {
+    border-bottom: 4px solid #20ad83;
+}
+
+.negative {
+    border-bottom: 4px solid #ed6576;
+}
+
+.neutral {
+    border-bottom: 4px solid #e9b448;
+}
+
+/* Charts */
+.chart-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 24px;
+}
+
+.chart-card {
+    min-height: 320px;
+}
+
+#sentimentChart {
+    max-height: 250px;
+}
+
+#summary {
+    line-height: 2.5;
+    color: #64657c;
+    font-size: 14px;
+}
+
+/* Review results */
+.review-section {
+    margin-top: 32px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 600px;
+}
+
+th, td {
+    padding: 18px;
+    border-bottom: 1px solid #eeeef5;
+    font-size: 13px;
+}
+
+th {
+    color: #696a83;
+    background: #f8f8fd;
+    font-weight: 700;
+}
+
+td {
+    color: #45465e;
+    line-height: 1.7;
+}
+
+tbody tr:hover {
+    background: #fafaff;
+}
+
+.sentiment {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.sentiment.Positive {
+    background: #ddf7ed;
+    color: #13875f;
+}
+
+.sentiment.Negative {
+    background: #ffe5e9;
+    color: #c83f53;
+}
+
+.sentiment.Neutral {
+    background: #fff3d9;
+    color: #a47719;
+}
+
+.empty {
+    text-align: center;
+    color: #9293a6;
+    padding: 30px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 28px;
+    color: #9293a6;
+    font-size: 12px;
+    border-top: 1px solid #e9e9f2;
+    background: white;
+    margin-top: 45px;
+}
+
+/* Responsive design */
+@media (max-width: 850px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chart-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 6%;
+    }
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .container {
+        padding: 0 16px;
+        margin: 28px auto;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 18px;
+    }
+
+    .stat-card h2 {
+        font-size: 27px;
+    }
+
+    .input-section,
+    .chart-card,
+    .review-section {
+        padding: 20px;
+    }
+
+    .input-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-footer button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
